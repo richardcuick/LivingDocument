@@ -1,0 +1,5 @@
+@startuml
+!include .\\AzureClient.puml
+!include .\\GithubClient.puml
+!include .\\Program.puml
+@enduml

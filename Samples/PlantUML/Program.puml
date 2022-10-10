@@ -1,0 +1,55 @@
+@startuml
+class AzureUrlInfo <<struct>> {
+    + Protocol : string
+    + Domain : string
+    + Organization : string
+    + Project : string
+    + Provider : string
+    + Repository : string
+    + Path : string
+}
+class GithubUrlInfo <<struct>> {
+    + Protocol : string
+    + Domain : string
+    + Owner : string
+    + Repository : string
+    + Branch : string
+    + Path : string
+}
+class Person <<struct>> {
+    + Name : string
+    + Age : string
+    + Height_In_Inches : string
+    + Addresses : Dictionary<string, Address>
+}
+class Address <<struct>> {
+    + Street : string
+    + City : string
+    + State : string
+    + Zip : string
+}
+class Book {
+    + Title : string <<get>> <<set>>
+    + Author : string <<get>> <<set>>
+}
+class Options {
+    + InputFiles : IEnumerable<string> <<get>> <<set>>
+    + Verbose : bool <<get>> <<set>>
+    + stdin : bool <<get>> <<set>>
+    + Offset : long? <<get>> <<set>>
+}
+class Program {
+    + {static} SomeAction(s:string) : void
+    + {static} CreateConsoleMenu(args:string[]) : void
+    + {static} Main(args:string[]) : void
+    {static} ParseArguments(args:string[]) : void
+    {static} RunOptions(opts:Options) : void
+    {static} HandleParseError(errs:IEnumerable<Error>) : void
+    {static} MergeTemplate() : void
+    {static} ReadYamlConfiguration() : void
+    {static} ExtractGithubUrl() : GithubUrlInfo
+    {static} ExtractAzureUrl() : AzureUrlInfo
+    {static} CloneGithub() : void
+    {static} CloneAzure() : void
+}
+@enduml

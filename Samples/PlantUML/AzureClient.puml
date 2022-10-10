@@ -1,0 +1,25 @@
+@startuml
+class LinkFields <<struct>> {
+    + self : String
+}
+class FileInfo <<struct>> {
+    + name : String
+    + type : String
+    + download_url : String
+    + _links : LinkFields
+}
+class FileData <<struct>> {
+    + name : String
+    + contents : String
+}
+class Directory <<struct>> {
+    + name : String
+    + subDirs : List<Directory>
+    + files : List<FileData>
+}
+class Azure {
+    + {static} <<async>> Clone(d:AzureClient.Directory, basePath:string) : Task
+    + {static} <<async>> getRepo(owner:string, name:string, access_token:string, localPath:string) : Task<Directory>
+    - {static} <<async>> readDirectory(name:String, client:HttpClient, uri:string, access_token:string) : Task<Directory>
+}
+@enduml
