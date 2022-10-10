@@ -1,0 +1,63 @@
+[
+  {
+    "description": "",
+    "elements": [
+      {
+        "description": "",
+        "id": "bank-account;stores-money",
+        "keyword": "Scenario",
+        "line": 4,
+        "name": "Stores money",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 5,
+            "name": "A bank account with starting balance of $100",
+            "match": {
+              "location": "step-definitions\\bank-account.steps.ts:6"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 6,
+            "name": "$100 is deposited",
+            "match": {
+              "location": "step-definitions\\bank-account.steps.ts:15"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 7,
+            "name": "The bank account balance should be $200",
+            "match": {
+              "location": "step-definitions\\bank-account.steps.ts:19"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 0
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      }
+    ],
+    "id": "bank-account",
+    "line": 2,
+    "keyword": "Feature",
+    "name": "Bank Account",
+    "tags": [],
+    "uri": "features\\bank-account.feature"
+  }
+]
